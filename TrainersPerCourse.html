@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <title>Trainers Per Course</title>
+  <style>
+    #trainersPerCourse {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+
+    }
+
+    #trainersPerCourse td,
+    #trainersPerCourse th {
+      border: 1px solid rgba(221, 221, 221, 0.363);
+      padding: 8px;
+    }
+
+    #trainersPerCourse tr:nth-child(even) {
+      background-color: #f2f2f281;
+    }
+
+    #trainersPerCourse tr:hover {
+      background-color: #ddd;
+    }
+
+    #trainersPerCourse th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: rgb(32, 71, 66);
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container p-3 ">
+    <!-- trainers Per Course Table -->
+    <table id="trainersPerCourse" class="table">
+
+      <thead>
+        <tr>
+
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Subject</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+
+          <td><input type="text" id="firstname" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="Jack"></td>
+          <td><input type="text" id="lastname" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="Nicholson"></td>
+          <td><input type="text" id="subject" value="Java"></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="firstname" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="Nicole"></td>
+          <td><input type="text" id="lastname" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="Kidman"></td>
+          <td><input type="text" id="subject" value="C#"></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="firstname" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="Morgan"></td>
+          <td><input type="text" id="lastname" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="Freeman"></td>
+          <td><input type="text" id="subject" value="Java"></td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+    <button type="button" class="btn btn-success" onclick="myFunctionStudentAdd(trainersPerCourse)">Add Row</button>
+    <button type="button" class="btn btn-danger" onclick="deleteRow(trainersPerCourse)">Delete Row</button>
+    <a class="btn btn-info" href="MainMenu.html">Main Menu</a>
+
+    <script>
+
+      function myFunctionStudentAdd(trainersPerCourse) {
+        var table = document.getElementById("trainersPerCourse");
+
+        var rowCount = table.rows.length;
+        var row = table.insertRow(rowCount);
+
+        //cell 1
+        var cell1 = row.insertCell(0);
+        var element1 = document.createElement("input");
+        element1.type = "text";
+        element1.id = "firstname";
+        element1.placeholder = "First Name";
+        element1.onkeypress = function onkeydown() {
+          var ch = String.fromCharCode(event.keyCode);
+          var filter = /[a-zA-Z]/;
+          if (!filter.test(ch)) {
+            event.returnValue = false;
+          }
+        };
+        cell1.appendChild(element1);
+
+        //cell 2
+        var cell2 = row.insertCell(1);
+        var element2 = document.createElement("input");
+        element2.type = "text";
+        element2.id = "lastname";
+        element2.placeholder = "Last Name";
+        element2.onkeypress = function onkeydown() {
+          var ch = String.fromCharCode(event.keyCode);
+          var filter = /[a-zA-Z]/;
+          if (!filter.test(ch)) {
+            event.returnValue = false;
+          }
+        };
+        cell2.appendChild(element2);
+
+        //cell 3
+        var cell3 = row.insertCell(2);
+        var element3 = document.createElement("input");
+        element3.type = "text";
+        element3.id = "subject";
+        element3.placeholder = "Subject";
+        cell3.appendChild(element3);
+
+      }
+
+      function deleteRow() {
+        var table = document.getElementById("trainersPerCourse");
+        var rowCount = table.rows.length;
+
+        table.deleteRow(rowCount - 1);
+      }
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+  </div>
+</body>
+
+</html>

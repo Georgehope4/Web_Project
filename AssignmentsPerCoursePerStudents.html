@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <title>Assignments Per Course Per Students</title>
+  <style>
+    #assignmentsPerCoursePerStudents {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+
+    }
+
+    #assignmentsPerCoursePerStudents td,
+    #assignmentsPerCoursePerStudents th {
+      border: 1px solid rgba(221, 221, 221, 0.363);
+      padding: 8px;
+    }
+
+    #assignmentsPerCoursePerStudents tr:nth-child(even) {
+      background-color: #f2f2f281;
+    }
+
+    #assignmentsPerCoursePerStudents tr:hover {
+      background-color: #ddd;
+    }
+
+    #assignmentsPerCoursePerStudents th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: rgb(247, 12, 208);
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container p-3 ">
+    <!-- Asiignments Per Course Table -->
+    <table id="assignmentsPerCoursePerStudents" class="table">
+
+      <thead>
+        <tr>
+
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Subject</th>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" id="firstname" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="Jake"></td>
+          <td><input type="text" id="lastname" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="Gyllenhaal"></td>
+          <td><input type="text" id="subject" value="Java"></td>
+          <td><input type="text" id="title" value="Assignment Java Part A"></td>
+          <td><input type="text" id="description" value="Description Java"></td>
+
+        </tr>
+        <tr>
+          <td><input type="text" id="firstname" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="Kate"></td>
+          <td><input type="text" id="lastname" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="Beckinsale"></td>
+          <td><input type="text" id="subject" value="Java"></td>
+          <td><input type="text" id="title" value="Assignment Java Part B"></td>
+          <td><input type="text" id="description" value="Description Java"></td>
+
+        </tr>
+        <tr>
+          <td><input type="text" id="firstname" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="Leonardo"></td>
+          <td><input type="text" id="lastname" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="DiCaprio"></td>
+          <td><input type="text" id="subject" value="Java"></td>
+          <td><input type="text" id="title" value="Assignment Java Part B"></td>
+          <td><input type="text" id="description" value="Description Java"></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="firstname" onkeypress="return (event.charCode > 64 && 
+          event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="Tom"></td>
+          <td><input type="text" id="lastname" onkeypress="return (event.charCode > 64 && 
+          event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="Hardy"></td>
+          <td><input type="text" id="subject" value="C#"></td>
+          <td><input type="text" id="title" value="Assignment C# Part B"></td>
+          <td><input type="text" id="description" value="Description C#"></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="firstname" onkeypress="return (event.charCode > 64 && 
+              event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="Anne"></td>
+          <td><input type="text" id="lastname" onkeypress="return (event.charCode > 64 && 
+              event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="Hathaway"></td>
+          <td><input type="text" id="subject" value="C#"></td>
+          <td><input type="text" id="title" value="Assignment C# Part A"></td>
+          <td><input type="text" id="description" value="Description C#"></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="firstname" onkeypress="return (event.charCode > 64 && 
+              event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="Matthew"></td>
+          <td><input type="text" id="lastname" onkeypress="return (event.charCode > 64 && 
+              event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" value="McConaughey"></td>
+          <td><input type="text" id="subject" value="C#"></td>
+          <td><input type="text" id="title" value="Assignment C# Part A"></td>
+          <td><input type="text" id="description" value="Description C#"></td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+    <button type="button" class="btn btn-success" onclick="myFunctionStudentAdd(assignmentsPerCoursePerStudents)">Add
+      Row</button>
+    <button type="button" class="btn btn-danger" onclick="deleteRow(assignmentsPerCoursePerStudents)">Delete
+      Row</button>
+    <a class="btn btn-info" href="MainMenu.html">Main Menu</a>
+
+    <script>
+
+      function myFunctionStudentAdd(assignmentsPerCoursePerStudents) {
+        var table = document.getElementById("assignmentsPerCoursePerStudents");
+
+        var rowCount = table.rows.length;
+        var row = table.insertRow(rowCount);
+
+      var cell1 = row.insertCell(0);
+      var element1 = document.createElement("input");
+      element1.type = "text";
+      element1.id = "firstname";
+      element1.placeholder = "First Name";
+      cell1.appendChild(element1);
+
+      var cell2 = row.insertCell(1);
+      var element2 = document.createElement("input");
+      element2.type = "text";
+      element2.id = "lastname";
+      element2.placeholder = "Last Name";
+      cell2.appendChild(element2);
+
+
+      var cell3 = row.insertCell(2);
+      var element3 = document.createElement("input");
+      element3.type = "text";
+      element3.id = "subject";
+      element3.placeholder = "Subject";
+      cell3.appendChild(element3);
+
+      var cell4 = row.insertCell(3);
+      var element4 = document.createElement("input");
+      element4.type = "text";
+      element4.id = "title";
+      element4.placeholder = "Title";
+      cell4.appendChild(element4);
+
+      var cell5 = row.insertCell(4);
+      var element5 = document.createElement("input");
+      element5.type = "text";
+      element5.id = "discription";
+      element5.placeholder = "Discription";
+      cell5.appendChild(element5);
+
+      }
+
+      function deleteRow() {
+        var table = document.getElementById("assignmentsPerCoursePerStudents");
+        var rowCount = table.rows.length;
+
+        table.deleteRow(rowCount - 1);
+      }
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+  </div>
+</body>
+
+</html>
